@@ -1,9 +1,7 @@
 "Vim ems to pixels
 
 " A global variable that allows a user to change their default base font-size.
-if !exists('g:px_to_em_base')
-  let g:px_to_em_base = 16
-endif
+let g:px_to_em_base = get(g:, 'px_to_em_base', '16')
 
 function! VimPxEmConvertPxToEm(px)
   return printf("%0.3fem", 1.0/g:px_to_em_base*a:px)
